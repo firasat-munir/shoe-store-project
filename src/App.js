@@ -4,6 +4,7 @@ import './App.css';
 import { Header } from './components/Header';
 import { Home } from './components/Home';
 import { ProductDetail } from './components/ProductDetail';
+import { ProductIndex } from './components/ProductIndex';
 import { Products } from './components/Products';
 
 function NotFound(){
@@ -16,12 +17,12 @@ function NotFound(){
 
 function App() {
   return (
-    <div>
+    <div className="App-header">
       <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path='products' element={<Products />}>
-          <Route path='' element={<Products />}></Route>
+          <Route path='' element={<ProductIndex />}></Route>
           <Route path=':productId' element={<ProductDetail />}></Route>
         </Route>
         <Route path='*' element={<NotFound />}></Route>
